@@ -6,7 +6,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import NavigationRoutes from "./src/shared/routes/Main.routes";
 import { store, persistor } from "./src/redux/store";
 import { colors } from "./src/styles/theme";
+import { LogBox } from "react-native";
 import { StatusBar } from "expo-status-bar";
+
+if (__DEV__) {
+  LogBox.ignoreLogs(["Require cycle:"]);
+}
 
 export default function App() {
   return (
