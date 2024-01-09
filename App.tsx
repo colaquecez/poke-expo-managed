@@ -9,10 +9,6 @@ import { colors } from "./src/styles/theme";
 import { LogBox } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-if (__DEV__) {
-  LogBox.ignoreLogs(["Require cycle:"]);
-}
-
 export default function App() {
   return (
     <ThemeProvider theme={colors}>

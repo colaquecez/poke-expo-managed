@@ -1,7 +1,7 @@
 import React from "react";
 import { ViewProps } from "react-native";
 
-import { Text } from "../../components";
+import { Text } from "../Text";
 
 import * as S from "./PokemonNotFound.styles";
 interface IPokemmonNotFound extends ViewProps {
@@ -18,4 +18,4 @@ const PokemonNotFound = ({ children, ...rest }: IPokemmonNotFound) => {
   );
 };
 
-export default PokemonNotFound;
+export { PokemonNotFound };

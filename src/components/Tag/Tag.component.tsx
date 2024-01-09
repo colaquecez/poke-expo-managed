@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import * as S from './Tag.styles';
+import * as S from "./Tag.styles";
 interface ITag {
   children: React.ReactNode;
   color?: string;
 }
 
-const Tag = ({ children, color = 'grey' }: ITag) => {
+const Tag = ({ children, color = "grey" }: ITag) => {
   return (
     <S.Container testID="ComponentTagId" color={color}>
       <S.Text>{children}</S.Text>
@@ -14,4 +14,4 @@ const Tag = ({ children, color = 'grey' }: ITag) => {
   );
 };
 
-export default Tag;
+export { Tag };

@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Text } from "../../components";
+import * as S from "./CardPokemon.styles";
+
+import { Text } from "../Text";
+import { PokemonNotFound } from "../PokemonNotFound/";
 
 import PokeballFavorite from "../../../assets/pokeball_favorite.svg";
-import PokemonNotFound from "../PokemonNotFound/PokemonNotFound.component";
-import * as S from "./CardPokemon.styles";
 
 interface ICardPokemon {
   name: string;
@@ -60,4 +61,4 @@ const CardPokemon = ({
     </S.Button>
   );
 };
-export default CardPokemon;
+export { CardPokemon };

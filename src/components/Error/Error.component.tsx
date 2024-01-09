@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Text } from "../../components";
+import { Text } from "../Text";
 
 import * as S from "./Error.styles";
 interface IError {
@@ -30,4 +30,4 @@ const Error = ({
   );
 };
 
-export default Error;
+export { Error };

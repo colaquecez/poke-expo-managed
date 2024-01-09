@@ -1,7 +1,7 @@
-import React from 'react';
-import { TextProps } from 'react-native';
+import React from "react";
+import { TextProps } from "react-native";
 
-import * as S from './Text.styles';
+import * as S from "./Text.styles";
 
 interface IText extends TextProps {
   color?: string;
@@ -10,22 +10,22 @@ interface IText extends TextProps {
   marginLeft?: number;
   marginRight?: number;
   fontSize?: number;
-  textAlign?: React.CSSProperties['textAlign'];
+  textAlign?: React.CSSProperties["textAlign"];
   fontWeight?: string;
-  textTransform?: React.CSSProperties['textTransform'];
+  textTransform?: React.CSSProperties["textTransform"];
   children: React.ReactNode;
 }
 
 const Text = ({
-  color = '#000000',
+  color = "#000000",
   marginBottom = 0,
   marginLeft = 0,
-  textAlign = 'left',
+  textAlign = "left",
   marginRight = 0,
-  fontWeight = '400',
+  fontWeight = "400",
   marginTop = 0,
   fontSize = 14,
-  textTransform = 'capitalize',
+  textTransform = "capitalize",
   children,
   ...rest
 }: IText) => {
@@ -47,4 +47,4 @@ const Text = ({
   );
 };
 
-export default Text;
+export { Text };

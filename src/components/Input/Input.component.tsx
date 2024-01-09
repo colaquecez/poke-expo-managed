@@ -1,7 +1,7 @@
-import React from 'react';
-import { TextInputProps } from 'react-native';
+import React from "react";
+import { TextInputProps } from "react-native";
 
-import * as S from './Input.styles';
+import * as S from "./Input.styles";
 
 interface IInput extends TextInputProps {
   value?: string;
@@ -11,8 +11,8 @@ interface IInput extends TextInputProps {
 const Input = ({
   value,
   onChangeText,
-  testID = 'InputTestID',
-  placeholder = 'Pesquisar Pokemon',
+  testID = "InputTestID",
+  placeholder = "Pesquisar Pokemon",
   ...rest
 }: IInput) => {
   return (
@@ -26,4 +26,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export { Input };

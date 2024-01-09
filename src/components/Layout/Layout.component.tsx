@@ -1,7 +1,7 @@
-import React from 'react';
-import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React from "react";
+import { TouchableWithoutFeedback, Keyboard } from "react-native";
 
-import * as S from './Layout.styles';
+import * as S from "./Layout.styles";
 
 interface ILayout {
   children: React.ReactNode;
@@ -15,4 +15,4 @@ const Layout = ({ children }: ILayout) => {
   );
 };
 
-export default Layout;
+export { Layout };
