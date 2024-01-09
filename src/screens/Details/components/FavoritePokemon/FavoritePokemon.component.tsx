@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Text } from 'src/components';
+import { Text } from "../../../../components";
 
-import PokeballFavorite from '../../../../../assets/pokeball_favorite.svg';
-import PokeballUnFavorite from '../../../../../assets/pokeball_unfavorite.svg';
+import PokeballFavorite from "../../../../../assets/pokeball_favorite.svg";
+import PokeballUnFavorite from "../../../../../assets/pokeball_unfavorite.svg";
 
-import * as S from './FavoritePokemon.styles';
+import * as S from "./FavoritePokemon.styles";
 
 interface IFavoritePokemon {
   isFavorite?: boolean;
@@ -22,7 +22,7 @@ const FavoritePokemon = ({ isFavorite, onPress }: IFavoritePokemon) => {
       )}
 
       <Text marginTop={10} fontWeight="500" textAlign="center">
-        {isFavorite ? 'Soltar Pokemon' : 'Capturar Pokemon'}
+        {isFavorite ? "Soltar Pokemon" : "Capturar Pokemon"}
       </Text>
     </S.PokeBallContainer>
   );

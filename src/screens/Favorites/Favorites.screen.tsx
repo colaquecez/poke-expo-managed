@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, Dimensions } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { useEffect, useState } from "react";
+import { FlatList, Dimensions } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { CardPokemon, Input, Text, Layout } from 'src/components';
-import { RootStackParamList } from 'src/shared/routes/Main.routes';
-import columnWrapperStyle from 'src/styles/columWrapperListPokemon';
-import useAppSelector from 'src/hook/useSelector';
+import { CardPokemon, Input, Text, Layout } from "../../components";
+import { RootStackParamList } from "../../shared/routes/Main.routes";
+import columnWrapperStyle from "../../styles/columWrapperListPokemon";
+import useAppSelector from "../../hook/useSelector";
 
-import Pokeball from '../../../assets/pokebolaoverlay.svg';
-import * as S from './Favorites.styles';
+import Pokeball from "../../../assets/pokebolaoverlay.svg";
+import * as S from "./Favorites.styles";
 
-type NavigationProps = NativeStackScreenProps<RootStackParamList, 'ListHome'>;
+type NavigationProps = NativeStackScreenProps<RootStackParamList, "ListHome">;
 
 const Favorites = ({ navigation }: NavigationProps) => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const { favorites } = useAppSelector((state) => state.pokemon);
   const [filteredData, setFilteredData] = useState(favorites);
 
@@ -30,7 +30,7 @@ const Favorites = ({ navigation }: NavigationProps) => {
     );
   }, [search]);
 
-  const { width: widthScreen } = Dimensions.get('window');
+  const { width: widthScreen } = Dimensions.get("window");
 
   return (
     <Layout>
@@ -49,11 +49,11 @@ const Favorites = ({ navigation }: NavigationProps) => {
           >
             {search &&
               filteredData.length === 0 &&
-              'Pokemon não encontrado, você pode capturar indo na tela principal :)'}
+              "Pokemon não encontrado, você pode capturar indo na tela principal :)"}
 
             {favorites.length === 0 &&
               !search &&
-              'Você não capturou nenhum pokemon ainda :('}
+              "Você não capturou nenhum pokemon ainda :("}
           </Text>
         )}
         ListHeaderComponent={
@@ -77,7 +77,7 @@ const Favorites = ({ navigation }: NavigationProps) => {
         renderItem={({ item }) => {
           return (
             <CardPokemon
-              onPress={() => navigation.navigate('Details', item)}
+              onPress={() => navigation.navigate("Details", item)}
               image={item.image}
               width={widthScreen / 2 - 16}
               name={item.name}

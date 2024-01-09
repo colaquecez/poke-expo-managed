@@ -1,6 +1,6 @@
-import React from 'react';
-import { Text } from 'src/components';
-import { IGetPokemonByNameResult } from 'src/redux/pokemon/pokemon.types';
+import React from "react";
+import { Text } from "../../../../components";
+import { IGetPokemonByNameResult } from "../../../../redux/pokemon/pokemon.types";
 
 interface IAbilitiesList {
   abilitieData: IGetPokemonByNameResult | undefined;

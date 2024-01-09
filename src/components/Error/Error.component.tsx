@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { Text } from 'src/components';
+import { Text } from "../../components";
 
-import * as S from './Error.styles';
+import * as S from "./Error.styles";
 interface IError {
   refetch?: () => void;
   title?: string;
@@ -10,9 +10,9 @@ interface IError {
 }
 
 const Error = ({
-  title = 'Houve um erro :(',
+  title = "Houve um erro :(",
   refetch,
-  tryAgainMessage = 'Tentar novamente'
+  tryAgainMessage = "Tentar novamente",
 }: IError) => {
   return (
     <S.Container testID="ContainerError">

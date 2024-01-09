@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { Text } from 'src/components';
+import { Text } from "../../components";
 
-import PokeballFavorite from '../../../assets/pokeball_favorite.svg';
-import PokemonNotFound from '../PokemonNotFound/PokemonNotFound.component';
-import * as S from './CardPokemon.styles';
+import PokeballFavorite from "../../../assets/pokeball_favorite.svg";
+import PokemonNotFound from "../PokemonNotFound/PokemonNotFound.component";
+import * as S from "./CardPokemon.styles";
 
 interface ICardPokemon {
   name: string;
@@ -19,9 +19,9 @@ const CardPokemon = ({
   width = 0,
   image,
   name,
-  textNotFound = 'Quem é esse pokemon?',
+  textNotFound = "Quem é esse pokemon?",
   onPress,
-  isFavorite = false
+  isFavorite = false,
 }: ICardPokemon) => {
   return (
     <S.Button testID="ButtonCardPokemonId" onPress={onPress}>
@@ -32,12 +32,12 @@ const CardPokemon = ({
               width={width}
               blurRadius={100}
               source={{
-                uri: image
+                uri: image,
               }}
             />
             <S.Image
               source={{
-                uri: image
+                uri: image,
               }}
             />
           </>

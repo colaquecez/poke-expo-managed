@@ -1,9 +1,9 @@
-import React from 'react';
-import { ViewProps } from 'react-native';
+import React from "react";
+import { ViewProps } from "react-native";
 
-import { Text } from 'src/components';
+import { Text } from "../../components";
 
-import * as S from './PokemonNotFound.styles';
+import * as S from "./PokemonNotFound.styles";
 interface IPokemmonNotFound extends ViewProps {
   children: React.ReactNode;
 }

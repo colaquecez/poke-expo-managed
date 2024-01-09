@@ -1,29 +1,29 @@
-import React from 'react';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { MaterialCommunityIcons } from '@expo/vector-icons/';
-import { StatusBar } from 'expo-status-bar';
-import { useTheme } from 'styled-components';
+import React from "react";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { MaterialCommunityIcons } from "@expo/vector-icons/";
+import { StatusBar } from "expo-status-bar";
+import { useTheme } from "styled-components";
 
-import { RootStackParamList } from 'src/shared/routes/Main.routes';
+import { RootStackParamList } from "../../shared/routes/Main.routes";
 import {
   useGetPokemonByNameQuery,
-  useGetPokemonSpeciesQuery
-} from 'src/redux/pokemon/pokemon.api';
-import { Text, Error, Loading } from 'src/components';
-import { treatColors } from 'src/utils/specieTransformColor';
-import useAppDispatch from 'src/hook/useDispatch';
-import useAppSelector from 'src/hook/useSelector';
-import { managePokemonAction } from 'src/redux/pokemon/pokemon.reducer';
+  useGetPokemonSpeciesQuery,
+} from "../../redux/pokemon/pokemon.api";
+import { Text, Error, Loading } from "../../components";
+import { treatColors } from "../../utils/specieTransformColor";
+import useAppDispatch from "../../hook/useDispatch";
+import useAppSelector from "../../hook/useSelector";
+import { managePokemonAction } from "../../redux/pokemon/pokemon.reducer";
 
-import Pokeball from '../../../assets/pokebolaoverlaytransparent.svg';
-import Dots from '../../../assets/dots.svg';
-import * as S from './Details.styles';
-import TypesList from './components/TypeList/TypeList.component';
-import AbilitiesList from './components/AbilitiesList/AbilitiesList.component';
-import EggGroupList from './components/EggGroupList/EggGroupList.component';
-import FavoritePokemon from './components/FavoritePokemon/FavoritePokemon.component';
+import Pokeball from "../../../assets/pokebolaoverlaytransparent.svg";
+import Dots from "../../../assets/dots.svg";
+import * as S from "./Details.styles";
+import TypesList from "./components/TypeList/TypeList.component";
+import AbilitiesList from "./components/AbilitiesList/AbilitiesList.component";
+import EggGroupList from "./components/EggGroupList/EggGroupList.component";
+import FavoritePokemon from "./components/FavoritePokemon/FavoritePokemon.component";
 
-type NavigationProps = NativeStackScreenProps<RootStackParamList, 'Details'>;
+type NavigationProps = NativeStackScreenProps<RootStackParamList, "Details">;
 
 const Details = ({ navigation, route }: NavigationProps) => {
   const { image, name, url, id } = route.params;
@@ -32,14 +32,14 @@ const Details = ({ navigation, route }: NavigationProps) => {
     data: generalData,
     isError: generalDataIsError,
     isFetching: generalDataLoading,
-    refetch: generalDataRefetch
+    refetch: generalDataRefetch,
   } = useGetPokemonByNameQuery(name);
 
   const {
     data: speciesData,
     isFetching: speciesLoading,
     isError: speciesIsError,
-    refetch: speciesRefetch
+    refetch: speciesRefetch,
   } = useGetPokemonSpeciesQuery(name);
 
   const dispatch = useAppDispatch();
@@ -66,7 +66,7 @@ const Details = ({ navigation, route }: NavigationProps) => {
 
   return (
     <S.SafeAreaView backgroundColor={treatColors[colorPokemon]}>
-      <StatusBar style={'light'} />
+      <StatusBar style={"light"} />
       <S.Wrapper>
         {canGoBack() && (
           <MaterialCommunityIcons
@@ -120,7 +120,7 @@ const Details = ({ navigation, route }: NavigationProps) => {
                       image,
                       name,
                       url,
-                      id
+                      id,
                     })
                   );
                 }}

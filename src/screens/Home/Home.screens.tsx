@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, Dimensions } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { useEffect, useState } from "react";
+import { FlatList, Dimensions } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { useLazyGetPokemonsQuery } from 'src/redux/pokemon/pokemon.api';
-import { IPokemonResult } from 'src/redux/pokemon/pokemon.types';
-import { CardPokemon, Text, Error, Loading, Layout } from 'src/components';
-import { RootStackParamList } from 'src/shared/routes/Main.routes';
-import columnWrapperStyle from 'src/styles/columWrapperListPokemon';
-import useAppSelector from 'src/hook/useSelector';
+import { useLazyGetPokemonsQuery } from "../../redux/pokemon/pokemon.api";
+import { IPokemonResult } from "../../redux/pokemon/pokemon.types";
+import { CardPokemon, Text, Error, Loading, Layout } from "../../components";
+import { RootStackParamList } from "../../shared/routes/Main.routes";
+import columnWrapperStyle from "../../styles/columWrapperListPokemon";
+import useAppSelector from "../../hook/useSelector";
 
-import Pokeball from '../../../assets/pokebolaoverlay.svg';
-import * as S from './Home.styles';
+import Pokeball from "../../../assets/pokebolaoverlay.svg";
+import * as S from "./Home.styles";
 
-type NavigationProps = NativeStackScreenProps<RootStackParamList, 'ListHome'>;
+type NavigationProps = NativeStackScreenProps<RootStackParamList, "ListHome">;
 
 const Home = ({ navigation }: NavigationProps) => {
   const [page, setPage] = useState(0);
@@ -24,8 +24,8 @@ const Home = ({ navigation }: NavigationProps) => {
     {
       data: getPokemon,
       isError: getPokemonIsError,
-      isFetching: getPokemonIsLoading
-    }
+      isFetching: getPokemonIsLoading,
+    },
   ] = useLazyGetPokemonsQuery();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Home = ({ navigation }: NavigationProps) => {
     setResults(getPokemon ? [...results, ...getPokemon?.results] : []);
   }, [getPokemon]);
 
-  const { width: widthScreen } = Dimensions.get('window');
+  const { width: widthScreen } = Dimensions.get("window");
 
   if (getPokemonIsError) {
     return <Error refetch={() => triggerGetPokemon(page)} />;
@@ -73,7 +73,7 @@ const Home = ({ navigation }: NavigationProps) => {
           return (
             <CardPokemon
               isFavorite={favorites.some((favorite) => favorite.id === item.id)}
-              onPress={() => navigation.navigate('Details', item)}
+              onPress={() => navigation.navigate("Details", item)}
               image={item.image}
               width={widthScreen / 2 - 16}
               name={item.name}

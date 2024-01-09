@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.colaquecez.expo-pokemon-managed-workflow"
     },
     "android": {
       "adaptiveIcon": {

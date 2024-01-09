@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { Text, Tag } from 'src/components';
-import { IGetPokemonByNameResult } from 'src/redux/pokemon/pokemon.types';
-import { typesPokemonColor } from 'src/utils/specieTransformColor';
+import { Text, Tag } from "../../../../components";
+import { IGetPokemonByNameResult } from "../../../../redux/pokemon/pokemon.types";
+import { typesPokemonColor } from "../../../../utils/specieTransformColor";
 
-import * as S from './Types.styles';
+import * as S from "./Types.styles";
 
 interface ITypes {
   typesData: IGetPokemonByNameResult | undefined;
