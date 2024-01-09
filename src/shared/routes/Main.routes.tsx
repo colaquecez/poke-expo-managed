@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Details } from '../../screens/';
-import MenuRouter from '../routes/Menu.routes';
-import { IPokemonResult } from '../../redux/pokemon/pokemon.types';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Details } from "../../screens/";
+import MenuRouter from "../routes/Menu.routes";
+import { IPokemonResult } from "../../redux/pokemon/pokemon.types";
 
 export type RootStackParamList = {
-  ListHome: undefined;
+  MenuRouter: undefined;
   Details: IPokemonResult;
 };
 
@@ -17,16 +17,16 @@ const MainStackRoute = () => {
     <MainStack.Navigator>
       <MainStack.Screen
         options={{
-          headerShown: false
+          headerShown: false,
         }}
-        name="ListHome"
+        name="MenuRouter"
         component={MenuRouter}
       />
       <MainStack.Screen
         options={{
-          animation: 'slide_from_bottom',
-          headerTitle: '',
-          headerShown: false
+          animation: "slide_from_bottom",
+          headerTitle: "",
+          headerShown: false,
         }}
         component={Details}
         name="Details"

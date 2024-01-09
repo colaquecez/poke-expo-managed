@@ -10,7 +10,7 @@ import useAppSelector from "../../hook/useSelector";
 import Pokeball from "../../../assets/pokebolaoverlay.svg";
 import * as S from "./Favorites.styles";
 
-type NavigationProps = NativeStackScreenProps<RootStackParamList, "ListHome">;
+type NavigationProps = NativeStackScreenProps<RootStackParamList, "MenuRouter">;
 
 const Favorites = ({ navigation }: NavigationProps) => {
   const [search, setSearch] = useState("");

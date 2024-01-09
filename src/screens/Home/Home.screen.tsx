@@ -12,7 +12,7 @@ import useAppSelector from "../../hook/useSelector";
 import Pokeball from "../../../assets/pokebolaoverlay.svg";
 import * as S from "./Home.styles";
 
-type NavigationProps = NativeStackScreenProps<RootStackParamList, "ListHome">;
+type NavigationProps = NativeStackScreenProps<RootStackParamList, "MenuRouter">;
 
 const Home = ({ navigation }: NavigationProps) => {
   const [page, setPage] = useState(0);

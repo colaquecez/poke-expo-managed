@@ -1,8 +1,9 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//@ts-nocheck
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { Home, Favorites } from '../../screens/';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Home, Favorites } from "../../screens/";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 export type RootStackParamList = {
   Home: undefined;
   Details: { name: string; url: string; image: string };
@@ -15,7 +16,7 @@ const MenuTabBarRoute = () => {
     <MenuTabBar.Navigator>
       <MenuTabBar.Screen
         options={{
-          tabBarLabel: 'Pokemons',
+          tabBarLabel: "Pokemons",
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
               name="pokemon-go"
@@ -23,7 +24,7 @@ const MenuTabBarRoute = () => {
               color={color}
             />
           ),
-          headerShown: false
+          headerShown: false,
         }}
         name="Home"
         component={Home}
@@ -31,10 +32,10 @@ const MenuTabBarRoute = () => {
       <MenuTabBar.Screen
         options={{
           headerShown: false,
-          tabBarLabel: 'Favoritos',
+          tabBarLabel: "Favoritos",
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="heart" size={size} color={color} />
-          )
+          ),
         }}
         name="Favorites"
         component={Favorites}
